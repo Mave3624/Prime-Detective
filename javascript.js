@@ -5,20 +5,20 @@ const button = document.querySelector('#button')
 
 const message = document.createElement('h3')
 button.addEventListener ('click', () => {
-        message.textContent = ''
+        message.textContent = 'MADE BY MAVERICK'
+        body.insertBefore(message, output)
         output.textContent = ''
-    let n = input.value
+    let number = input.value
     input.value = ''
 
-    if (n > 1) {
+    if (number > 1) {
         message.textContent = `Prime number`
-         if (n > 2) message.textContent += `s of  ${n}`; else message.textContent += ` of  ${n}`
-
-        body.insertBefore(message, output)
-    }
+         if (number > 2) message.textContent += `s of  ${number}`; else message.textContent += ` of  ${number}`;
+    
+        }
 
     Lebel:
-    for (i = 2; i <= n; i++) {
+    for (i = 2; i <= number; i++) {
         for (a = 2; a < i; a++) {
             if (i % a == 0) continue Lebel
         }
@@ -29,4 +29,3 @@ button.addEventListener ('click', () => {
 }
 )
 input.focus()
-console.log('Made by MAVERICK')

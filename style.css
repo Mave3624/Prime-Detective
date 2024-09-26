@@ -49,14 +49,15 @@ h3 {
 ul {
     display: flex;
     gap: 20px;
-    justify-content: space-between;
     flex-wrap: wrap;
 }
 
 li {
-    width: 40px;
+    width: 50px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 500;
+    list-style-type: none;
+    text-align: center;
 }
 
 button:active {
