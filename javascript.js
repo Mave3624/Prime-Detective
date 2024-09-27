@@ -24,6 +24,28 @@ function checker() {
         list.textContent = number
         list.setAttribute('value', `${number}`)
         Orderedlist.appendChild(list)
+
+    list.addEventListener('click', () => {
+         underedlist.textContent = ''
+        warning.textContent = ''
+        body.appendChild(underedlist)
+    out:
+        for (i = 2; i <= number; i++) {
+            for (a = 2; a < i; a++) {
+                if (i == 20000) {
+                warning.textContent = 'Showing Only prime numbers from 1 - 20000 to aboved Crashing you Device.'
+                body.insertBefore(warning, underedlist)
+                break out
+            }
+                if (i % a === 0) continue out
+        }
+            let prime = document.createElement ('li')
+            prime.textContent = i
+            underedlist.appendChild(prime)
+            }
+        }
+    )   
+
         message.textContent = `Prime number`
         if (number > 20000) message.textContent += 's of 20000'
          else if (number > 2) message.textContent += `s of  ${number}`; else message.textContent += ` of  ${number}`;
@@ -110,6 +132,7 @@ function ColorSelection() {
 history.addEventListener('click', () => {
     message.textContent = 'Recent Search'
     body.append(Orderedlist)
+    warning.textContent = ''
     underedlist.remove()
     
 })
