@@ -15,6 +15,14 @@ p {
     margin: 50px 0;
 }
 
+.warning {
+    font-family: monospace;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
 div.inside {
     max-width: 310px;
     margin: 0 auto;
@@ -23,7 +31,7 @@ div.inside {
     max-width: 50px 0;
 }
 
-input {
+#input {
     width: 250px;
     display: block;
     border-radius: 10px;
@@ -31,7 +39,7 @@ input {
     border: 1.5px solid gray;
 }
 
-button {
+#button {
     width: 60px;
     display: block;
     border-radius: 10px;
@@ -40,7 +48,7 @@ button {
 
 h3 {
     text-align: center;
-    margin: 50px;
+    margin: 50px 0 35px 0;
     font-family: sans-serif;
     font-weight: 500;
     padding: 0;      
@@ -52,7 +60,7 @@ ul {
     flex-wrap: wrap;
 }
 
-li {
+ul> li {
     width: 50px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 500;
@@ -66,4 +74,29 @@ button:active {
 
 input::placeholder {
     padding: 0 5px;
+}
+
+.upper {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    
+}
+
+.upper > button {
+    padding: 0 3px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+#display {
+    font-size: 20px;
+    font-weight: 900;
+    color: gray;
+}
+
+#history {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-weight: 500;
 }
