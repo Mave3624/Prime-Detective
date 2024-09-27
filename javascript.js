@@ -1,16 +1,19 @@
 const body = document.querySelector('body')
-const underedlist = document.querySelector('.output')
 const input = document.querySelector('#input')
 const button = document.querySelector('#button')
 const history = document.querySelector('#history')
 const display = document.querySelector('#display')
 const Orderedlist = document.createElement('ol')
+const underedlist = document.createElement('ul')
 const warning = document.createElement('p')
+warning.setAttribute('class', 'warning')
 const message = document.createElement('h3')
-body.insertBefore(message, underedlist)
+body.append(message)
 
 function checker() {
     message.textContent = 'MADE BY MAVERICK'
+    body.append(underedlist)
+    Orderedlist.remove()
     warning.textContent = ''
     underedlist.textContent = ''
     let number = input.value
@@ -29,17 +32,16 @@ function checker() {
     Lebel:
     for (i = 2; i <= number; i++) {
         for (a = 2; a < i; a++) {
-            if (i == 20001) {
-        warning.setAttribute('class', 'warning')
+            if (i == 20000) {
         warning.textContent = 'Showing Only prime numbers from 1 - 20000 to aboved Crashing you Device.'
         body.insertBefore(warning, underedlist)
         break Lebel
     }
             if (i % a === 0) continue Lebel
         }
-        let list = document.createElement ('li')
-        list.textContent = i
-        underedlist.appendChild(list)
+        let prime = document.createElement ('li')
+        prime.textContent = i
+        underedlist.appendChild(prime)
     }
 }
 
@@ -104,10 +106,12 @@ function ColorSelection() {
     }
         
 }
+
 history.addEventListener('click', () => {
     message.textContent = 'Recent Search'
-    underedlist.textContent = ''
-    underedlist.appendChild(Orderedlist)
+    body.append(Orderedlist)
+    underedlist.remove()
+    
 })
 
 display.addEventListener('click', ColorSelection)
