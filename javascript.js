@@ -21,12 +21,12 @@ function checker() {
 
     if (number >= 1) {
         const list = document.createElement('li')
-        list.textContent = number
-        list.setAttribute('value', `${number}`)
+        list.textContent = 1
+        list.setAttribute('value', number)
         Orderedlist.appendChild(list)
 
     list.addEventListener('click', () => {
-         underedlist.textContent = ''
+        underedlist.textContent = ''
         warning.textContent = ''
         body.appendChild(underedlist)
     out:
