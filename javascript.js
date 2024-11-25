@@ -46,9 +46,6 @@ function checker() {
         }
     )   
 
-        message.textContent = `Prime number`
-        if (number > 20000) message.textContent += 's of 20000'
-         else if (number > 2) message.textContent += `s of  ${number}`; else message.textContent += ` of  ${number}`;
     }
 
     Lebel:
