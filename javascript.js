@@ -6,8 +6,8 @@ const display = document.querySelector('#display')
 const Orderedlist = document.createElement('ol')
 const underedlist = document.createElement('ul')
 const warning = document.createElement('p')
-warning.setAttribute('class', 'warning')
 const message = document.createElement('h3')
+warning.setAttribute('class', 'warning')
 body.append(message)
 
 function checker() {
@@ -17,22 +17,33 @@ function checker() {
     warning.textContent = ''
     underedlist.textContent = ''
     let number = input.value
-    input.value = ''
+    number = Number(number)
+    
+    if (number >= Number() && number > 0) {
+        message.textContent = `Prime number`
+        number > 20000 ? number = 20000:
+        number > 2 ? message.textContent += `s of  ${number}`:
+        message.textContent += ` of  ${number}`;
 
-    if (number >= 1) {
         const list = document.createElement('li')
-        list.textContent = 1
+        list.textContent = input.value
         list.setAttribute('value', number)
         Orderedlist.appendChild(list)
-
-    list.addEventListener('click', () => {
-        underedlist.textContent = ''
+    
+    list.addEventListener('click',() => {
+        Orderedlist.remove()
+        underedlist.textContent = 
         warning.textContent = ''
         body.appendChild(underedlist)
+    
+        message.textContent = `Prime number`
+        number > 20000 ? number = 20000:
+        number > 2 ? message.textContent += `s of  ${number}`:
+        message.textContent += ` of  ${number}`;
     out:
         for (i = 2; i <= number; i++) {
             for (a = 2; a < i; a++) {
-                if (i == 20000) {
+                if (i === 20000) {
                 warning.textContent = 'Showing Only prime numbers from 1 - 20000 to aboved Crashing you Device.'
                 body.insertBefore(warning, underedlist)
                 break out
@@ -44,31 +55,37 @@ function checker() {
             underedlist.appendChild(prime)
             }
         }
-    )   
-
+    ) 
     }
-
-    Lebel:
+    
+out:
     for (i = 2; i <= number; i++) {
         for (a = 2; a < i; a++) {
-            if (i == 20000) {
-        warning.textContent = 'Showing Only prime numbers from 1 - 20000 to aboved Crashing you Device.'
-        body.insertBefore(warning, underedlist)
-        break Lebel
-    }
-            if (i % a === 0) continue Lebel
+            if (i === 20000) {
+            warning.textContent = 'Showing Only prime numbers from 1 - 20000 to aboved Crashing you Device.'
+            body.insertBefore(warning, underedlist)
+            break out
         }
+            if (i % a === 0) continue out
+    }
         let prime = document.createElement ('li')
         prime.textContent = i
         underedlist.appendChild(prime)
     }
+    input.value = ''
 }
 
-button.addEventListener ('click', checker)
-input.focus()
+button.addEventListener ('click', checker,)
+
+history.addEventListener('click', () => {
+    message.textContent = 'Recent Search'
+    body.append(Orderedlist)
+    warning.textContent = ''
+    underedlist.remove()
+})
 
 let click = 0
-function ColorSelection() {
+display.addEventListener('click', function ColorSelection() {
     let count = ++click
     if (count === 10) {
         click = 0
@@ -124,14 +141,4 @@ function ColorSelection() {
         display.textContent = "◑"
     }
         
-}
-
-history.addEventListener('click', () => {
-    message.textContent = 'Recent Search'
-    body.append(Orderedlist)
-    warning.textContent = ''
-    underedlist.remove()
-    
 })
-
-display.addEventListener('click', ColorSelection)
